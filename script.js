@@ -1,5 +1,20 @@
 // import...
 
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+} 
+
 // Toggle hidden information
 const toggleButton = document.getElementById('btn-toggle1');
 const hiddenInfo = document.querySelector('.hidden-info');
@@ -16,6 +31,7 @@ colorButton.addEventListener('click', () => {
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     colorBox.style.backgroundColor = randomColor;
+    
 });
 
 // Form submission handling
