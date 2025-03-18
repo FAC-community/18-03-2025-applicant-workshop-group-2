@@ -1,5 +1,20 @@
 // import...
+const darkbutton = document.getElementById('dark');
+const darkbutton2 = document.getElementById("section1");
+// function myFunction() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+// });
 
+
+darkbutton.addEventListener('click', () => {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  //document.getElementById("section1").style.backgroundColor="black";
+  document.getElementById("section1").style.background="black";
+})
+
+//
 let slideIndex = 0;
 showSlides();
 
@@ -57,6 +72,7 @@ function renderItems(items) {
       container.appendChild(div);
     });
   }
+//new
 
 /* IDEAS FOR ADDITIONAL INTERACTIONS
 
