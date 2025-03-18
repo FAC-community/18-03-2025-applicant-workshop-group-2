@@ -1,4 +1,34 @@
 // import...
+const darkbutton = document.getElementById('dark');
+const darkbutton2 = document.getElementById("section1");
+// function myFunction() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+// });
+
+
+darkbutton.addEventListener('click', () => {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  //document.getElementById("section1").style.backgroundColor="black";
+  document.getElementById("section1").style.background="black";
+})
+
+//
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+} 
 
 // Toggle hidden information
 const toggleButton = document.getElementById('btn-toggle1');
@@ -16,6 +46,7 @@ colorButton.addEventListener('click', () => {
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     colorBox.style.backgroundColor = randomColor;
+    
 });
 
 // Form submission handling
@@ -41,6 +72,7 @@ function renderItems(items) {
       container.appendChild(div);
     });
   }
+//new
 
   // Creating a new paragraph element
 const newParagraph = document.createElement('p');
