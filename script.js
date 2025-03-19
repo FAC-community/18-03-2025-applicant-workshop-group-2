@@ -1,6 +1,8 @@
 // import...
 const darkbutton = document.getElementById('dark');
-const darkbutton2 = document.getElementById("section1");
+const darkbutton2 = document.getElementById('dark2');
+//const darkbuttonx = document.getElementById("section1");
+
 // function myFunction() {
 //   var element = document.body;
 //   element.classList.toggle("dark-mode");
@@ -9,10 +11,25 @@ const darkbutton2 = document.getElementById("section1");
 
 darkbutton.addEventListener('click', () => {
   var element = document.body;
+  var element2 = document.getElementById("section1");
   element.classList.toggle("dark-mode");
   //document.getElementById("section1").style.backgroundColor="black";
-  document.getElementById("section1").style.background="black";
+  //document.getElementById("section1").style.background="black";
+  element2.classList.toggle('dark-mode')
 })
+
+
+darkbutton2.addEventListener('click', () => {
+   var elements = document.getElementsByClassName("content-section");//return an array of elements  //getElementById("section1");
+   //element2.classList.remove('content-section');
+   //element2.classList.add('dark-mode');//toggle just add a class ddont remove it
+   //console.log(element3);
+   //element3.setAttribute('class', 'dark-mode');
+   for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.add('dark-mode');
+}
+   //element3.setAttribute
+ })
 
 //
 let slideIndex = 0;
